@@ -1,12 +1,18 @@
 
 import Navbar from '../src/components/Navbar'
+import HeroCard from './components/HeroCard';
 
-function Demo() {
+function Heading() {
+  return <h1>testing</h1>
+}
+
+function App() {
   return (
-    <div>
+    <div className='mx-20'>
       <Navbar />
+      <HeroCard />
     </div>
   );
 }
 
-export default Demo
+export default App
