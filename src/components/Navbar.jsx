@@ -1,20 +1,11 @@
+/* eslint-disable react/prop-types */
 import { List, Button } from '@mantine/core';
 import crucifixLogo from '../assets/crucifixLogo.png'; 
-
-const Navbar = () => {
-  return (
-    <div>
-      <img src={crucifixLogo} alt='crucifix logo with a heart inside' />
-      <p>Care Quest</p>
-      <NavItems btn={<ButtonItem />} />
-    </div>
-  );
-};
 
 
 function NavItems(props) {
   return (
-    <List>
+    <List className='flex'>
       <List.Item>HOME</List.Item>
       <List.Item>ABOUT US</List.Item>
       <List.Item>SERVICES</List.Item>
@@ -29,5 +20,21 @@ function NavItems(props) {
 function ButtonItem() {
   return <Button variant='filled'>Button</Button>;
 }
+
+const Navbar = () => {
+  return (
+    <div className='flex'>
+      <img
+        src={crucifixLogo}
+        alt='crucifix logo with a heart inside'
+        className='w-24 h-24'
+      />
+      <p className='text-blue-600'>Care Quest</p>
+      <NavItems btn={<ButtonItem />} />
+    </div>
+  );
+};
+
+
 
 export default Navbar;
