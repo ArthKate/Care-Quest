@@ -2,7 +2,6 @@
 import { List, Button } from '@mantine/core';
 import crucifixLogo from '../assets/crucifixLogo.png';
 
-
 function Logo() {
   return (
     <div className='flex items-center py-2'>
@@ -35,21 +34,21 @@ function ButtonItem() {
     <Button
       variant='outline'
       color='teal'
-      className={'flex self-center pr-1 hover:bg-emerald-200'} 
+      className={'flex self-center pr-1 hover:bg-emerald-200'}
     >
       {isSignedIn ? 'SIGN OUT' : 'SIGN IN'}
     </Button>
   );
 }
 
-const Navbar = () => {
+const Footer = () => {
   return (
-    <div className='flex justify-between bg-emerald-100 px-4'>
+    <div className='flex justify-between bg-cyan-100 px-4 mt-20'>
       <Logo />
       <NavItems />
-      <ButtonItem />
+      {/* <ButtonItem /> */}
     </div>
   );
 };
 
-export default Navbar;
+export default Footer;
