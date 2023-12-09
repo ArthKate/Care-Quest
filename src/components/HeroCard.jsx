@@ -26,12 +26,12 @@ function HeroCard() {
         />
       </div>
 
-      <div className='grid justify-evenly overflow-hidden'>
-        <h1 className='text-4xl md:text-6xl font-bold whitespace-normal pl-2 mb-4'>
+      <div className='grid justify-evenly'>
+        <h1 className='text-3xl md:text-5xl font-bold whitespace-normal px-4 mb-4'>
           Find MediCare Anytime Wherever You Are 24/7
         </h1>
 
-        <p className='font-semibold text-gray-500 text-xl md:text-2xl mb-4'>
+        <p className='font-semibold text-gray-500 text-xl px-4 md:text-2xl mb-4'>
           Locate to seek medical care and advice from health specialists near
           you.
         </p>

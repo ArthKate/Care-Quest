@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
-import { List, Button } from '@mantine/core';
+import { List, Button, Burger } from '@mantine/core';
 import crucifixLogo from '../assets/crucifixLogo.png';
 
 function Logo() {
@@ -16,7 +16,7 @@ function Logo() {
   );
 }
 
-function NavItems(props) {
+function NavItems() {
   return (
     <List className='flex items-center text-gray-700 justify-center font-bold space-x-8'>
       <List.Item>
@@ -31,7 +31,7 @@ function NavItems(props) {
       <List.Item>
         <NavLink to='/faq'>FAQ</NavLink>
       </List.Item>
-      <List.Item>{props.btn}</List.Item>
+      <List.Item></List.Item>
     </List>
   );
 }
