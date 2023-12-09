@@ -1,8 +1,8 @@
 :root {
   --app-body-bg-color: #ecfeff;
-  /* --app-navbar-bg-color: #ccfbf1; */
+  --app-navbar-bg-color: #ccfbf1;
 } 
 
 .body-bg-color {
-  background-color: var(--app-body-bg-color);
+  background-color: (--app-body-bg-color);
 }

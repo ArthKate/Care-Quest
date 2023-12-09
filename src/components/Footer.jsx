@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom'
 import { List, Button } from '@mantine/core';
 import crucifixLogo from '../assets/crucifixLogo.png';
 
@@ -18,10 +19,18 @@ function Logo() {
 function NavItems(props) {
   return (
     <List className='flex items-center text-gray-700 justify-center font-bold space-x-8'>
-      <List.Item>HOME</List.Item>
-      <List.Item>ABOUT US</List.Item>
-      <List.Item>SERVICES</List.Item>
-      <List.Item>FAQ</List.Item>
+      <List.Item>
+        <Link to='/'>HOME</Link>
+      </List.Item>
+      <List.Item>
+        <Link to='/about us'>ABOUT US</Link>
+      </List.Item>
+      <List.Item>
+        <Link to='/services'>SERVICES</Link>
+      </List.Item>
+      <List.Item>
+        <Link to='/faq'>FAQ</Link>
+      </List.Item>
       <List.Item>{props.btn}</List.Item>
     </List>
   );
