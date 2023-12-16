@@ -1,44 +1,44 @@
-import { Button } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
+// import { Button } from '@mantine/core'
+import nobgSmilingDoc from '../assets/nobgSmilingDoc.png';
 import { IconArrowRight } from '@tabler/icons-react';
-import maleDoc from '../assets/maleDoc.png';
-
-function SearchButton() {
-  return (
-    <Button
-      variant='outline'
-      color='teal'
-      rightSection={<IconArrowRight size={14} />}
-      className='m-5 hover:bg-emerald-200'
-    >
-      FIND PROVIDERS
-    </Button>
-  );
-}
+import { PatientForm } from './PatientForm';
 
 function HeroCard() {
+  let navigate = useNavigate();
   return (
-    <div className='grid gap-4 md:grid-cols-2 mt-5 my-2'>
-      <div>
-        <img
-          src={maleDoc}
-          alt='smiling doctor with holding a medical records'
-          className='w-full h-full object-cover'
-        />
+    <>
+      
+      <div className='flex flex-col justify-center md:flex-row md:justify-between bg-emerald-100'>
+        <div className='w-1/2 h-full'>
+          <img
+            src={nobgSmilingDoc}
+            alt='smiling doctor with holding a medical records'
+            className='object-contain max-w-full max-h-full pt-10'
+          />
+        </div>
+
+        <div className=' flex grow flex-col self-center w-1/2 h-full'>
+          <h1 className='text-3xl md:text-6xl font-bold mb-8'>
+            Find MediCare Anytime Wherever You Are 24/7.
+          </h1>
+
+          <p className='text-lg md:text-2xl font-semibold pb-1 text-gray-600 mb-8'>
+            Locate to seek medical care and advice from health specialists near
+            you with Care Quest.
+          </p>
+
+          <div className='flex bg-emerald-300 w-40 md:file:placeholder:w-48 h-12 overflow-hidden rounded-lg'>
+            <button
+              className=' w-full md:text-baseline font-semibold rounded-lg '
+              onClick={() => navigate('/specialist')}
+            >
+              Find Specialist
+            </button>
+          </div>
+        </div>
       </div>
-
-      <div className='grid justify-evenly'>
-        <h1 className='text-3xl md:text-5xl font-bold whitespace-normal px-4 mb-4'>
-          Find MediCare Anytime Wherever You Are 24/7
-        </h1>
-
-        <p className='font-semibold text-gray-500 text-xl px-4 md:text-2xl mb-4'>
-          Locate to seek medical care and advice from health specialists near
-          you.
-        </p>
-
-        <SearchButton className='justify-center' />
-      </div>
-    </div>
+    </>
   );
 }
 export default HeroCard;

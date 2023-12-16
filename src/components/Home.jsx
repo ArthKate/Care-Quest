@@ -1,14 +1,14 @@
-import Navbar from './Navbar'
-import HeroCard from './HeroCard';
-// import Footer from './Footer';
 
+import HeroCard from './HeroCard'
+import Navbar from './Navbar'
 
 function Home() {
   return (
-    <div className=''>
+    <div>
       <Navbar />
-      <HeroCard />
-      {/* <Footer /> */}
+      <div className='w-5/5'>
+        <HeroCard />
+      </div>
     </div>
   );
 }
