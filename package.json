@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
     "@mantine/core": "^7.2.2",
     "@mantine/hooks": "^7.2.2",
     "@tabler/icons-react": "^2.42.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-fonts": "^1.2.1",
     "react-router-dom": "^6.20.1"
   },
   "devDependencies": {

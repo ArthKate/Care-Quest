@@ -1,69 +1,76 @@
-/* eslint-disable react/prop-types */
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { List, Group, Button, Burger } from '@mantine/core';
-import nobgcqlogo1 from '../assets/nobgcqlogo1.png';
+import { List, Burger } from '@mantine/core';
+import noBackgroundCQLogo1 from '../assets/noBackgroundCQLogo1.png';
 
-function Logo () {
+//logo
+
+function Logo() {
+  return <img src={noBackgroundCQLogo1} className='w-24 h-auto sm:w-32 lg:w-48 xl-56 2xl:w-64 alt="logo" px-4 py-2 m-4' />;
+}
+
+//Burger menu
+
+function Hamburger() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // toggle menu function
+  const toggleIsMenuOpen = () => setIsMenuOpen(!isMenuOpen);
   return (
-    <div className='flex flex-row py-2'>
-      <NavLink to='/'>
-        <img
-          src={nobgcqlogo1}
-          alt='crucifix logo with a heart inside'
-          className='w-full h-14 '
-        />
-      </NavLink>
-    </div>
+    <Burger
+      opened={isMenuOpen}
+      onClick={toggleIsMenuOpen}
+      color='#e5e7eb'
+      aria-label='Toggle navigation'
+    />
   );
 }
 
-function NavLeftItems() {
+//Navigation
+
+function Navbar() {
+  const isLoggedIn = false;
   return (
-    <List className='flex items-center text-white justify-center font-bold space-x-8'>
-      <List.Item>
-        <NavLink to='/'>HOME</NavLink>
-      </List.Item>
-      <List.Item>
-        <NavLink to='/about us'>ABOUT US</NavLink>
-      </List.Item>
-      <List.Item>
-        <NavLink to='/services'>SERVICES</NavLink>
-      </List.Item>
-      <List.Item>
-        <NavLink to='/partners'>PARTNERS</NavLink>
-      </List.Item>
-      <List.Item>
-        <NavLink to='/faq'>FAQ</NavLink>
-      </List.Item>
-      <List.Item></List.Item>
-    </List>
+    <nav className='flex justify-center items-center bg-emerald-950 w-full h-auto'>
+      {/*logo*/}
+      <section className='flex justify-between items-center w-full md:w-auto bg-emerald-950 text-gray-200 font-montserrat font-semibold sm:text-base lg:text-lgx xl:text-xl 2xl:text-2xl box-border m-4'>
+        <NavLink to='/'>
+          <div className='flex justify-center items-center w-auto mr-24'>
+            <Logo />
+          </div>
+        </NavLink>
+        {/*Left Navbar*/}
+        <ul className='hidden md:flex justify-between items-center'>
+          <li className='px-4 py-2 m-4'>
+            <NavLink to='/'>Home</NavLink>
+          </li>
+          <li className='px-4 py-2 m-4'>
+            <NavLink to='/'>About</NavLink>
+          </li>
+          <li className='px-4 py-2 m-4 whitespace-nowrap'>
+            <NavLink to='/'>Contact Us</NavLink>
+          </li>
+          <li className='px-4 py-2 m-4'>
+            <NavLink to='/'>Services</NavLink>
+          </li>
+          <li className='px-4 py-2 m-4'>
+            <NavLink to='/'>FAQ</NavLink>
+          </li>
+        </ul>
+
+        {/* Right Navbar */}
+        <ul className='hidden md:flex justify-between items-center ml-24'>
+          <li className='px-4 py-2 m-4'>Register</li>
+          <li className='px-4 py-2 m-4 whitespace-nowrap'>
+            {isLoggedIn ? <span>Log Out</span> : <span>Log In</span>}
+          </li>
+        </ul>
+        {/* Burger menu */}
+        <div className='sm:flex md:hidden px-4 py-2'>
+          <Hamburger />
+        </div>
+      </section>
+    </nav>
   );
 }
-
-function NavRightButtons() {
-  const isSignedIn = false;
-  return (
-    <div className='flex'>
-      <Button
-        variant='transparent'
-        color='white'
-        className={'flex self-center pr-1 hover:bg-emerald-200 hover:font-bold'}
-      >
-        {isSignedIn ? 'LOG OUT' : 'LOG IN'}
-      </Button>
-    </div>
-  );
-}
-
-
-const Navbar = () => {
-  return (
-    <div className='flex items-center justify-between bg-emerald-950 text-white px-8 h-4/5'>
-      <Logo />
-      <NavLeftItems />
-      <NavRightButtons />
-    </div>
-  );
-};
 
 export default Navbar;

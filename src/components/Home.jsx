@@ -1,14 +1,8 @@
-
-import HeroCard from './HeroCard'
-import Navbar from './Navbar'
-
+import NavBar from './Navbar'
 function Home() {
   return (
-    <div>
-      <Navbar />
-      <div className='w-5/5'>
-        <HeroCard />
-      </div>
+    <div className='font-montserrat mx-auto'>
+      <NavBar />
     </div>
   );
 }
