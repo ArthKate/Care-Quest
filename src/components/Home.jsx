@@ -1,8 +1,9 @@
-import NavBar from './Navbar'
+import Header from './Header';
+
 function Home() {
   return (
     <div className='font-montserrat mx-auto'>
-      <NavBar />
+      <Header />
     </div>
   );
 }
